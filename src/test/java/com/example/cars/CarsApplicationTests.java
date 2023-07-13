@@ -51,7 +51,7 @@ class CarsApplicationTests {
 	}
 
 	@Test
-	public void canAddANewHotel() throws Exception {
+	public void canAddANewCar() throws Exception {
 		Cars car = new Cars(1L,"abc","abc","abc", "abc",100 );
        when(carsRepo.save(car)).thenReturn((car));
 		mvc.perform(post("/cars/add")
@@ -62,7 +62,7 @@ class CarsApplicationTests {
 	}
 
 	@Test
-	public void canGetAllHotels() throws Exception {
+	public void canGetAllCars() throws Exception {
 		Cars car1 = new Cars(1L,"abc","abc","abc", "abc",100 );
 		Cars car2 = new Cars(1L,"abc","abc","abc", "abc",100 );
 
@@ -78,7 +78,7 @@ class CarsApplicationTests {
 	}
 
 	@Test
-	public void canGetAHotel() throws Exception {
+	public void canGetACar() throws Exception {
 		Cars car1 = new Cars(1L,"abc","abc","abc", "abc",100 );
 		when(carsRepo.findById(1L)).thenReturn(Optional.of(car1));
 		mvc.perform(MockMvcRequestBuilders.get("/cars/get/1")
